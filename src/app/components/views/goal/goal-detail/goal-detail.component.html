@@ -1,0 +1,17 @@
+<div *ngIf='goalData!=null'>
+    <div>
+        <p>{{goalData.title}}</p>
+        <p>{{goalData.description}}</p>
+        <button (click)='OpenEditGoal()'>Update</button>
+        <p>Start Date</p>
+        <p>Projected Completeion</p>
+    </div>
+    <div>
+        <p>Notes</p>
+        <button>Add Note</button>
+    </div>
+    <div>
+        <p>Status</p>
+        <p>Complete</p>
+    </div>
+</div>

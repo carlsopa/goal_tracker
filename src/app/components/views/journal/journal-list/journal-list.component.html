@@ -1,0 +1,5 @@
+<mat-card *ngFor='let journal of journalList' [routerLink]="['detail',journal.payload.doc.id]">
+    <mat-card-content>
+        {{journal.payload.doc.data().title}}
+    </mat-card-content> 
+</mat-card>

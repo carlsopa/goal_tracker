@@ -1,0 +1,12 @@
+<form (ngSubmit)='onSubmit()'[formGroup]='NewJournalGroup'>
+    <mat-form-field>
+        <mat-label>Title</mat-label>
+        <input formControlName='title' matInput placeholder="Title" required/>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Journal Entry</mat-label>
+        <textarea formControlName='text' matInput placeholder="text" required></textarea>
+    </mat-form-field>
+    <button mat-button matDialogClose >Cancel</button>
+    <button mat-button matDialogClose type='submit'>Create</button>
+    </form>

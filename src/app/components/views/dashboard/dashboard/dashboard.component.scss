@@ -1,0 +1,30 @@
+@import '~@angular/material/theming';
+mat-sidenav{
+    width:15vw;
+    @include mat-elevation(8);
+}
+mat-sidenav-content{
+    padding-left:2vw;
+    padding-right:2vw;
+}
+mat-nav-list{
+    margin-right:10px;
+    margin-left:10px;
+}
+a{
+    margin-bottom:10px;
+}
+.act{
+    color:#ffffff;
+    background-color:rgb(169, 16, 207) !important;
+    @include mat-elevation(3);
+}
+#nav-lg-btn{
+    position: absolute;
+    bottom:0;
+    left:0;
+}
+#user-button{
+    position: absolute;
+    right:2vw;
+}

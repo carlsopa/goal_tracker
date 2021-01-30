@@ -1,0 +1,47 @@
+<mat-card>
+    <mat-card-content>
+        <form [formGroup]='NewGoalFormGroup'>
+            <mat-form-field>
+                <mat-label>Title</mat-label>
+                <input formControlName='title' matInput placeholder="Title" required/>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Description</mat-label>
+                <input formControlName='description' matInput placeholder="Description" required/>
+            </mat-form-field>
+            <mat-form-field>
+                
+                <mat-select formControlName='category_id' matInput required>
+                    <mat-option *ngFor='let cat of categoryList' [value]='cat.value' required>
+                        {{cat.category}}
+                        </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <label>Is this a repeated Goal?</label>
+            <mat-radio-group [(ngModel)]='Repeated' [ngModelOptions]='{standalone:true}'>
+                <mat-radio-button value="yes">Yes</mat-radio-button>
+                <mat-radio-button value="no">No</mat-radio-button>
+            </mat-radio-group>
+            
+            <mat-radio-group *ngIf='Repeated == "yes"' [(ngModel)]='Deration' [ngModelOptions]='{standalone:true}'>
+                <label>How often are you repeating?</label>
+                <mat-radio-button name="RepeatedValue" value="Daily">Daily</mat-radio-button>
+                <mat-radio-button name="RepeatedValue" value="Weekly">weekly</mat-radio-button>
+                <mat-radio-button name="RepeatedValue" value="Monthly">monthly</mat-radio-button>
+            </mat-radio-group>
+            <mat-form-field *ngIf='Repeated == "no"'>
+                <mat-label>What is your target goal date?</mat-label>
+                <input matInput [(ngModel)]='Target' [ngModelOptions]='{standalone:true}' [matDatepicker]="picker">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+                
+            
+            
+        </form>
+    </mat-card-content>
+    <mat-card-actions align="start">
+        <button mat-button matDialogClose >Cancel</button>
+        <button mat-button matDialogClose (click)='onSubmit()'>Create</button>
+    </mat-card-actions>
+</mat-card>

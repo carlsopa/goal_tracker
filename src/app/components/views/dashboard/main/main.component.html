@@ -1,0 +1,28 @@
+<div id='display-data'>
+    <div class='data-box'>
+        <span class='data-heading'>Heading for Goals</span>
+        <div class='data'>
+            <mat-table [dataSource]='GoalDataSource'>
+                <ng-container matColumnDef='title'>
+                    <mat-header-cell *matHeaderCellDef>Title</mat-header-cell>
+                    <mat-cell *matCellDef='let element'>{{element.title}}</mat-cell>
+                </ng-container>
+                <mat-row *matRowDef='let row; columns: displayedColumns'></mat-row>
+                
+            </mat-table>
+        </div>
+    </div>
+    <div class='data-box'>
+        <span class='data-heading'>Heading for Journals</span>
+        <div class='data'>
+            <mat-table [dataSource]='JournalDataSource'>
+                <ng-container matColumnDef='title'>
+                    <mat-header-cell *matHeaderCellDef>Title</mat-header-cell>
+                    <mat-cell *matCellDef='let element'>{{element.title}}</mat-cell>
+                </ng-container>
+                <mat-row *matRowDef='let row; columns: displayedColumns'></mat-row>
+                
+            </mat-table>
+        </div>
+    </div>
+</div>

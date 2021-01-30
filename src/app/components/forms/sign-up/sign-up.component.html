@@ -1,0 +1,19 @@
+<form (ngSubmit)='SignUp()' [formGroup]='SignUpGroup'>
+    <mat-form-field>
+        <mat-label>First Name</mat-label>
+        <input formControlName='firstName' name='firstName' matInput placeholder="First Name"/>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Last Name</mat-label>
+        <input formControlName='lastName' name='lastName' matInput placeholder="Last Name"/>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input formControlName='email' name='email' matInput placeholder="Email"/>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input formControlName='password' name='password' matInput placeholder="Password"/>
+    </mat-form-field>
+    <button mat-button type='submit'>Sign Up</button>
+</form>

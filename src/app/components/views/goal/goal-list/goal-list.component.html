@@ -1,0 +1,7 @@
+<div id='card-display'>
+<mat-card *ngFor='let goal of goalList' [routerLink]="['detail',goal.payload.doc.id]">
+    <mat-card-content>
+        {{goal.payload.doc.data().title}}
+    </mat-card-content> 
+</mat-card>
+</div>
