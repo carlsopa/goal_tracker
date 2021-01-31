@@ -4,3 +4,12 @@
     right:15vw;
     // box-shadow: 0px 0px 16px 0px #000000;
 }
+@media (max-width:400px){
+    #sign-in{
+        position: absolute;
+        right:0px;
+        left:0px;
+        margin:auto;
+
+    }
+}

@@ -7,3 +7,11 @@ form{
     border-radius: 4px;
     box-shadow: 0px 0px 16px 0px #000000;
 }
+@media (max-width: 400px){
+    form{
+    background-color:red;
+    box-shadow:none;
+    width:100vw;
+    padding:0px;
+    }
+}
