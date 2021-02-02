@@ -28,6 +28,9 @@ import { AuthService } from './components/shared/services/auth.service';
 import { DashboardComponent } from './components/views/dashboard/dashboard/dashboard.component';
 import { NewJournalComponent } from './components/forms/new-journal/new-journal.component';
 import { NewNoteComponent } from './components/forms/new-note/new-note.component';
+import { DailyListComponent } from './components/dialog/daily-list/daily-list.component';
+import { QuickViewComponent } from './components/dialog/quick-view/quick-view.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,9 @@ import { NewNoteComponent } from './components/forms/new-note/new-note.component
     NotFoundComponent,
     DashboardComponent,
     NewJournalComponent,
-    NewNoteComponent
+    NewNoteComponent,
+    DailyListComponent,
+    QuickViewComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +65,7 @@ import { NewNoteComponent } from './components/forms/new-note/new-note.component
     AngularFireAuthModule,
     AngularFirestoreModule,
     MatDialogModule,
+    MatTableModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

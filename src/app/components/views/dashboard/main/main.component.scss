@@ -1,9 +1,18 @@
 @import '~@angular/material/theming';
 
+#display{
+    display: grid;
+    grid-template-rows:auto auto;
+}
+#goal-overview{
+    display: grid;
+    grid-template-columns:auto auto;
+}
+
 #display-data{
     display: grid;
     grid-template-columns: 2fr 2fr;
-    height:88vh;
+    margin-top:5vh;
     align-content: center;
     justify-content: center;
     grid-gap:2vw;
@@ -14,10 +23,19 @@
     height: 200px;
     background-color: #e0f7fa;
     align-items: center;border-radius: 10px;
-    // border:1px solid black;
     @include mat-elevation(4);
     padding:40px 10px 10px 10px;
 
+}
+.overview-data{
+    width:20vw;
+    height: 5vw;
+    justify-self: center;
+    background-color: #e0f7fa;
+    align-items: center;
+    border-radius: 10px;
+    @include mat-elevation(4);
+    padding:40px 10px 10px 10px;
 }
 .data-box{
     display: grid;

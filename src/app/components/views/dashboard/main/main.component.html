@@ -1,28 +1,40 @@
-<div id='display-data'>
-    <div class='data-box'>
-        <span class='data-heading'>Heading for Goals</span>
-        <div class='data'>
-            <mat-table [dataSource]='GoalDataSource'>
-                <ng-container matColumnDef='title'>
-                    <mat-header-cell *matHeaderCellDef>Title</mat-header-cell>
-                    <mat-cell *matCellDef='let element'>{{element.title}}</mat-cell>
-                </ng-container>
-                <mat-row *matRowDef='let row; columns: displayedColumns'></mat-row>
-                
-            </mat-table>
+<div id='display'>
+    <div id='goal-overview'>
+        <div id='daily' class='data-box'>
+            <span class='data-heading'>Daily Goals</span>
+            <div class='overview-data' (click)='dailyClick()'>{{DailyGoalCount}}</div>
+        </div>
+        <div id='daily' class='data-box'>
+            <span class='data-heading'>Daily Goals</span>
+            <div class='overview-data'>Something to put here</div>
         </div>
     </div>
-    <div class='data-box'>
-        <span class='data-heading'>Heading for Journals</span>
-        <div class='data'>
-            <mat-table [dataSource]='JournalDataSource'>
-                <ng-container matColumnDef='title'>
-                    <mat-header-cell *matHeaderCellDef>Title</mat-header-cell>
-                    <mat-cell *matCellDef='let element'>{{element.title}}</mat-cell>
-                </ng-container>
-                <mat-row *matRowDef='let row; columns: displayedColumns'></mat-row>
-                
-            </mat-table>
+    <div id='display-data'>
+        <div class='data-box'>
+            <span class='data-heading'>Heading for Goals</span>
+            <div class='data'>
+                <mat-table [dataSource]='GoalDataSource'>
+                    <ng-container matColumnDef='title'>
+                        <mat-header-cell *matHeaderCellDef>Title</mat-header-cell>
+                        <mat-cell *matCellDef='let element'>{{element.title}}</mat-cell>
+                    </ng-container>
+                    <mat-row *matRowDef='let row; columns: displayedColumns'></mat-row>
+                    
+                </mat-table>
+            </div>
+        </div>
+        <div class='data-box'>
+            <span class='data-heading'>Heading for Journals</span>
+            <div class='data'>
+                <mat-table [dataSource]='JournalDataSource'>
+                    <ng-container matColumnDef='title'>
+                        <mat-header-cell *matHeaderCellDef>Title</mat-header-cell>
+                        <mat-cell *matCellDef='let element'>{{element.title}}</mat-cell>
+                    </ng-container>
+                    <mat-row *matRowDef='let row; columns: displayedColumns'></mat-row>
+                    
+                </mat-table>
+            </div>
         </div>
     </div>
 </div>

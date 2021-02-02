@@ -36,6 +36,11 @@ export class GoalsService {
       date: new Date().toLocaleDateString(),
       time: new Date().toLocaleTimeString()})
   }
+  CompleteGoal(gid,id){
+    this.fs.collection(`data/${id}/goals`).doc(gid).update({
+      completed: true
+    })
+  }
   CreateNewJournalEntry(data,id){
     data['date']=new Date().toLocaleDateString()
     data['time']=new Date().toLocaleTimeString()

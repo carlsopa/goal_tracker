@@ -1,5 +1,7 @@
 import { Component} from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
+import { DailyListComponent } from 'src/app/components/dialog/daily-list/daily-list.component';
 import { AuthService } from 'src/app/components/shared/services/auth.service';
 import { GoalsService } from 'src/app/components/shared/services/goals.service';
 
@@ -16,9 +18,10 @@ export class MainComponent{
   displayedColumns: any[]=[
     'title'
   ]
-// journals: null
-test= 'test string'
+  DailyGoals: any=[]
+  DailyGoalCount=0
   constructor(
+    public dialog: MatDialog,
     public as: AuthService,
     public gs: GoalsService
   ) 
@@ -26,7 +29,13 @@ test= 'test string'
     this.as.user$.subscribe(user=>{
       this.gs.GetGoals(user.uid).subscribe(goal=>{
         goal.forEach(item => {
-          this.goals.push(item.payload.doc.data())
+          const itemData = item.payload.doc
+          if (itemData.data()['repeated']==='Daily'){
+            this.DailyGoals.push({id:itemData.id,title:itemData.data()['title']})
+            this.DailyGoalCount = this.DailyGoalCount+1
+          }
+        // //   console.log(item.payload.doc.data.description)
+          this.goals.push(itemData.data())
         });
         this.GoalDataSource = new MatTableDataSource(this.goals) 
       })
@@ -37,5 +46,9 @@ test= 'test string'
         this.JournalDataSource = new MatTableDataSource(this.journals)
       })
     })
+    
+  }
+  dailyClick(){
+    const dialogRef = this.dialog.open(DailyListComponent,{width:'500px',data:{list:this.DailyGoals}})
   }
 }

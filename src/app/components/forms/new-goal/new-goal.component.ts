@@ -58,11 +58,13 @@ export class NewGoalComponent implements OnInit {
   onSubmit(){
     if(this.Repeated=='yes'){
       this.NewGoalFormGroup.patchValue({
-        repeated: this.Deration
+        repeated: this.Deration,
+        completed: false
       })
     } else {
       this.NewGoalFormGroup.patchValue({
-        target: new Date(this.Target).toLocaleDateString()
+        target: new Date(this.Target).toLocaleDateString(),
+        completed: false
       })
     }
     this.gs.CreateNewGoal(this.NewGoalFormGroup.value,this.userid)
