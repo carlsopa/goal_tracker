@@ -1,11 +1,11 @@
 <form (ngSubmit)='SignIn()' [formGroup]='SignInGroup'>
     <mat-form-field>
         <mat-label>Email</mat-label>
-        <input formControlName='email' name='email' matInput placeholder="email"/>
+        <input formControlName='email' name='email' matInput placeholder="Email"/>
     </mat-form-field>
     <mat-form-field>
         <mat-label>Password</mat-label>
-        <input formControlName='password' name='password' matInput placeholder="password"/>
+        <input formControlName='password' name='password' matInput placeholder="Password"/>
     </mat-form-field>
-    <button mat-button type='submit'>Sign In</button>
+    <button mat-raised-button type='submit'>Sign In</button>
 </form>

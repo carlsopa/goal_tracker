@@ -1,6 +1,6 @@
 @import '~@angular/material/theming';
 mat-sidenav{
-    width:15vw;
+    // width:15vw;
     @include mat-elevation(8);
 }
 mat-sidenav-content{
@@ -27,4 +27,10 @@ a{
 #user-button{
     position: absolute;
     right:2vw;
+}
+@media (max-width:400px){
+    mat-sidenav{
+        // width:15vw;
+        @include mat-elevation(8);
+    }
 }
