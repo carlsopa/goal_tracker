@@ -32,6 +32,7 @@ import { DailyListComponent } from './components/dialog/daily-list/daily-list.co
 import { QuickViewComponent } from './components/dialog/quick-view/quick-view.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
+import { NoteViewComponent } from './components/dialog/note-view/note-view.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { MatCardModule } from '@angular/material/card';
     NewJournalComponent,
     NewNoteComponent,
     DailyListComponent,
-    QuickViewComponent
+    QuickViewComponent,
+    NoteViewComponent
   ],
   imports: [
     BrowserModule,

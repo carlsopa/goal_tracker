@@ -5,7 +5,14 @@
         <button (click)='OpenEditGoal()'>Update</button>
     </div>
     <div id='goal-notes'>
-        <p>Notes</p>
+        <mat-table [dataSource]='NoteDataSource'>
+            <ng-container matColumnDef='date'>
+                <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
+                <mat-cell *matCellDef='let element' (click)='OpenNoteView(element.id)'>{{element.date}}</mat-cell>
+            </ng-container>
+            <mat-row *matRowDef='let row; columns: displayedColumns'></mat-row>
+            
+        </mat-table>
         <button (click)='OpenAddNote()'>Add Note</button>
     </div>
     <div id='goal-status'>

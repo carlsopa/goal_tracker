@@ -65,10 +65,14 @@ export class GoalsService {
 
     
   }
-  GetNotes(id,gid){
+  GetNotes(gid,id){
+    return this.fs.collection(`data/${id}/goals/${gid}/notes`).snapshotChanges()
 
   }
   GetSingleNote(id,gid,nid){
+    return this.fs.collection(`data/${id}/goals/${gid}/notes`).doc(nid).ref.get().then(doc=>{
+      return doc.data()
+    })
 
   }
 
