@@ -1,1 +1,11 @@
-<p>journal-detail works!</p>
+<div *ngIf='journalData != null'>
+    <div id='journal-header'>
+        <p id='title'>{{journalData.title}}</p>
+        <p id='created'>{{journalData.date}}</p>
+
+    </div>
+    <div id='journal-body'>
+        <p id='body'>{{journalData.text}}</p>
+    </div>
+
+</div>

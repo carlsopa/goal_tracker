@@ -24,6 +24,7 @@ export class GoalDetailComponent implements OnInit {
     this.route.params.subscribe(d=>{
       this.as.user$.subscribe(u=>{
         this.gs.GetSingleGoal(d.id,u.uid).then(data=>{
+          console.log(data)
           this.goalId = d.id
           this.userId = u.uid
           this.goalData = data

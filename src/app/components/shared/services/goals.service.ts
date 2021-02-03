@@ -38,7 +38,9 @@ export class GoalsService {
   }
   CompleteGoal(gid,id){
     this.fs.collection(`data/${id}/goals`).doc(gid).update({
-      completed: true
+      completed: true,
+      updated_date: new Date().toLocaleDateString(),
+      updated_time: new Date().toLocaleTimeString()
     })
   }
   CreateNewJournalEntry(data,id){
@@ -50,7 +52,10 @@ export class GoalsService {
     return this.fs.collection(`data/${id}/journals`).snapshotChanges()
 
   }
-  GetSingleJournalEntry(){
+  GetSingleJournalEntry(id,jid){
+    return this.fs.collection(`data/${id}/journals`).doc(jid).ref.get().then(doc=>{
+      return doc.data()
+    })
 
   }
   UpdateJournalEntry(data){

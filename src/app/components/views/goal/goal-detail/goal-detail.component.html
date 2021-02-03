@@ -1,18 +1,22 @@
 <div *ngIf='goalData!=null'>
-    <div>
+    <div id='goal-header'>
         <p>Goal Title: <span>{{goalData.title}}</span></p>
         <p>Goal Description: <span>{{goalData.description}}</span></p>
         <button (click)='OpenEditGoal()'>Update</button>
     </div>
-    <div>
+    <div id='goal-notes'>
         <p>Notes</p>
         <button>Add Note</button>
     </div>
-    <div>
+    <div id='goal-status'>
         <h2>Goal Status</h2>
         <p>Goal Start Date: <span>{{goalData.date}}</span></p>
         <p *ngIf='goalData.repeated !=""'>Goal Repetition: <span>{{goalData.repeated}}</span></p>
         <p *ngIf='goalData.target !=""'>Goal Target Date: <span>{{goalData.target}}</span></p>
         <p *ngIf='goalData.completed'>Goal Completed</p>
+    </div>
+    <div id='foal-footer'>
+        <p>created <span>{{goalData.date}}</span></p>
+        <p>Last updated <span>{{goalData.updated_date}}</span></p>
     </div>
 </div>
