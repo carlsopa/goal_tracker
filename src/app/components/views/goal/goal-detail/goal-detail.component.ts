@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { GoalEditComponent } from 'src/app/components/forms/goal-edit/goal-edit.component';
+import { NewNoteComponent } from 'src/app/components/forms/new-note/new-note.component';
 import { AuthService } from 'src/app/components/shared/services/auth.service';
 import { GoalsService } from 'src/app/components/shared/services/goals.service';
 
@@ -39,6 +40,16 @@ export class GoalDetailComponent implements OnInit {
         title: this.goalData.title,
         description: this.goalData.description,
         category_id: this.goalData.category_id,
+        goal_id: this.goalId,
+        user_id: this.userId
+      }
+    })
+  }
+  OpenAddNote(){
+    const dialogRef = this.dialog.open(NewNoteComponent,{
+      data:{
+        title: this.goalData.title,
+        description: this.goalData.description,
         goal_id: this.goalId,
         user_id: this.userId
       }

@@ -31,6 +31,7 @@ import { NewNoteComponent } from './components/forms/new-note/new-note.component
 import { DailyListComponent } from './components/dialog/daily-list/daily-list.component';
 import { QuickViewComponent } from './components/dialog/quick-view/quick-view.component';
 import { MatTableModule } from '@angular/material/table';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { MatTableModule } from '@angular/material/table';
     AngularFireAuthModule,
     AngularFirestoreModule,
     MatDialogModule,
-    MatTableModule
+    MatTableModule,
+    MatCardModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

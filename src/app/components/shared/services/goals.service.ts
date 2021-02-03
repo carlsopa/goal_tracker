@@ -58,7 +58,11 @@ export class GoalsService {
     })
 
   }
-  CreateNote(id,gid){
+  CreateNote(data,id,gid){
+    data['date']=new Date().toLocaleDateString()
+    data['time']=new Date().toLocaleTimeString()
+    this.fs.collection(`data/${id}/goals/${gid}/notes`).add(data)
+
     
   }
   GetNotes(id,gid){
