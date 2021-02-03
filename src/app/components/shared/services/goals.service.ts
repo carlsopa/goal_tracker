@@ -33,8 +33,8 @@ export class GoalsService {
       title: data.title,
       description: 
       data.description,
-      date: new Date().toLocaleDateString(),
-      time: new Date().toLocaleTimeString()})
+      updated_date: new Date().toLocaleDateString(),
+      updated_time: new Date().toLocaleTimeString()})
   }
   CompleteGoal(gid,id){
     this.fs.collection(`data/${id}/goals`).doc(gid).update({
@@ -58,7 +58,13 @@ export class GoalsService {
     })
 
   }
-  UpdateJournalEntry(data){
+  CreateNote(id,gid){
+    
+  }
+  GetNotes(id,gid){
+
+  }
+  GetSingleNote(id,gid,nid){
 
   }
 
