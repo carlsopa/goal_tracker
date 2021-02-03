@@ -19,12 +19,10 @@ export class DailyListComponent implements OnInit {
   public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    console.log(this.data.list)
     this.daily = new MatTableDataSource(this.data.list)
   }
   quickedit(id){
-    console.log(id)
-    let dialogRef = this.dialog.open(QuickViewComponent,{width:'500px',data:{id:id}})
+    this.dialog.open(QuickViewComponent,{width:'500px',data:{id:id}})
   }
 
 }

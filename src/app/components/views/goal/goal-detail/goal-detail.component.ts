@@ -36,11 +36,9 @@ export class GoalDetailComponent implements OnInit {
           data.forEach(note=>{
             this.NoteList.push({id: note.payload.doc.id,date:note.payload.doc.data()['date']})
           })
-          console.log(this.NoteList)
           this.NoteDataSource = new MatTableDataSource(this.NoteList)
         })
         this.gs.GetSingleGoal(d.id,u.uid).then(data=>{
-          console.log(data)
           this.goalId = d.id
           this.userId = u.uid
           this.goalData = data
@@ -51,7 +49,6 @@ export class GoalDetailComponent implements OnInit {
   }
   OpenEditGoal(){
     const dialogRef = this.dialog.open(GoalEditComponent,{
-      width:'250px',
       data:{
         title: this.goalData.title,
         description: this.goalData.description,

@@ -20,7 +20,6 @@ export class JournalDetailComponent implements OnInit {
       this.as.user$.subscribe(u=>{
         this.gs.GetSingleJournalEntry(u.uid,d.id).then(data=>{
           this.journalData = data
-          console.log(data)
         })
       })
     })

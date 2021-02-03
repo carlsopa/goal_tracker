@@ -17,7 +17,6 @@ export class NoteViewComponent implements OnInit {
   public gs: GoalsService) { }
 
   ngOnInit(): void {
-    console.log(this.data)
     this.gs.GetSingleGoal(this.data.goal_id,this.data.user_id).then(data=>{
       this.title = data['title']
       this.description = data['description']
