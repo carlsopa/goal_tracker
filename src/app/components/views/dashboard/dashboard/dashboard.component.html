@@ -1,17 +1,18 @@
 <mat-toolbar>
-    {{display}}
+    
     <button (click)='snav.toggle()' [hidden]='!mobileQuery.matches'>
     <mat-icon>menu</mat-icon>
     </button>
-    <div id='user-button'>
+    Welcome, {{display}}
+    <!-- <div id='user-button'>
         <button mat-mini-fab [matMenuTriggerFor]='menu'>
             <mat-icon class="mat-18">person</mat-icon>
         </button>        
         <mat-menu #menu="matMenu">
             <button mat-menu-item >Setting</button>
-            <button mat-menu-item (click)='LogOut()'>Log Out</button>
+            <button mat-menu-item >Log Out</button>
         </mat-menu>
-    </div>
+    </div> -->
 </mat-toolbar>
 <mat-sidenav-container>
     <mat-sidenav #snav [mode]="mobileQuery.matches?'over':'side'" opened [disableClose]='!mobileQuery.matches'>
@@ -21,7 +22,7 @@
             <a mat-list-item [routerLink]="'./journal'" routerLinkActive='act'>Journal</a>
             <a mat-list-item routerLinkActive='act'>Profile</a>
             <a mat-list-item routerLinkActive='act'>Settings</a>
-            <button id='nav-lg-btn' mat-menu-item>Log Out</button>
+            <button id='nav-lg-btn' mat-menu-item (click)='LogOut()'>Log Out</button>
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content style='height: 88vh'>

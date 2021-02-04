@@ -8,21 +8,17 @@ import { NewGoalComponent } from 'src/app/components/forms/new-goal/new-goal.com
   styleUrls: ['./goal.component.scss']
 })
 export class GoalComponent implements OnInit {
-  public JournalInput
+  public GoalInput
 
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.JournalInput = document.getElementById('JournalInput')
+    this.GoalInput = document.getElementById('GoalInput')
 
   }
-  OpenNewGoal(){
-    const dialogRef = this.dialog.open(NewGoalComponent,{
-      width:'250px'
-    })
-  }
+
   CheckStatus(){
-    this.JournalInput.blur()
+    this.GoalInput.blur()
     const dialogRef = this.dialog.open(NewGoalComponent,{
       width:'500px'
     })
