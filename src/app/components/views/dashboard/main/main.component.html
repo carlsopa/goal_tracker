@@ -3,12 +3,12 @@
     <div id='goal-overview'>
         <div id='daily' class='data-box'>
             <span class='data-heading'>Daily Goals</span>
-            <div class='overview-data' (click)='dailyClick()'>{{DailyGoalCount}}</div>
+            <div class='overview-data' (click)='dailyClick()'>{{DailyGoalCount}}/{{DailyCompleteCount}}</div>
         </div>
-        <div id='daily' class='data-box'>
+        <!-- <div id='daily' class='data-box'>
             <span class='data-heading'>Daily Goals</span>
             <div class='overview-data'>Something to put here</div>
-        </div>
+        </div> -->
     </div>
     <div id='display-data'>
         <div class='data-box'>
@@ -16,8 +16,8 @@
             <div class='data'>
                 <mat-table [dataSource]='GoalDataSource'>
                     <ng-container matColumnDef='title'>
-                        <mat-header-cell *matHeaderCellDef>Title</mat-header-cell>
-                        <mat-cell *matCellDef='let element'>{{element.title}}</mat-cell>
+                        <mat-header-cell *matHeaderCellDef >Title</mat-header-cell>
+                        <mat-cell *matCellDef='let element' (click)='GoalView(this.element.id)'>{{element.data.title}}</mat-cell>
                     </ng-container>
                     <mat-row *matRowDef='let row; columns: displayedColumns'></mat-row>
                     
@@ -30,7 +30,7 @@
                 <mat-table [dataSource]='JournalDataSource'>
                     <ng-container matColumnDef='title'>
                         <mat-header-cell *matHeaderCellDef>Title</mat-header-cell>
-                        <mat-cell *matCellDef='let element'>{{element.title}}</mat-cell>
+                        <mat-cell *matCellDef='let element' (click)='JournalView(this.element.id)'>{{element.data.title}}</mat-cell>
                     </ng-container>
                     <mat-row *matRowDef='let row; columns: displayedColumns'></mat-row>
                     

@@ -17,9 +17,9 @@
 <mat-sidenav-container>
     <mat-sidenav #snav [mode]="mobileQuery.matches?'over':'side'" opened [disableClose]='!mobileQuery.matches'>
         <mat-nav-list>
-            <a mat-list-item [routerLink]="'./home'" routerLinkActive='act'>Home</a>
-            <a mat-list-item [routerLink]="'./goals'" routerLinkActive='act'>Goals</a>
-            <a mat-list-item [routerLink]="'./journal'" routerLinkActive='act'>Journal</a>
+            <a mat-list-item [routerLink]="'./home'" routerLinkActive='act' (click)='snav.toggle()'>Home</a>
+            <a mat-list-item [routerLink]="'./goals'" routerLinkActive='act' (click)='snav.toggle()'>Goals</a>
+            <a mat-list-item [routerLink]="'./journal'" routerLinkActive='act' (click)='snav.toggle()'>Journal</a>
             <a mat-list-item routerLinkActive='act'>Profile</a>
             <a mat-list-item routerLinkActive='act'>Settings</a>
             <button id='nav-lg-btn' mat-menu-item (click)='LogOut()'>Log Out</button>
