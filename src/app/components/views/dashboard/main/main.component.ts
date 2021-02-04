@@ -1,4 +1,5 @@
-import { Component} from '@angular/core';
+import { MediaMatcher } from '@angular/cdk/layout';
+import { ChangeDetectorRef, Component} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { DailyListComponent } from 'src/app/components/dialog/daily-list/daily-list.component';
@@ -11,6 +12,7 @@ import { GoalsService } from 'src/app/components/shared/services/goals.service';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent{
+  mobileQuery: MediaQueryList
   GoalDataSource: MatTableDataSource<any>
   JournalDataSource: MatTableDataSource<any>
   journals: any=[]
@@ -23,9 +25,11 @@ export class MainComponent{
   constructor(
     public dialog: MatDialog,
     public as: AuthService,
-    public gs: GoalsService
+    public gs: GoalsService,
+    ChangeDetector: ChangeDetectorRef,
+    media: MediaMatcher
   ) 
-  { 
+  { this.mobileQuery = media.matchMedia('(max-width:600px)')
     this.as.user$.subscribe(user=>{
       this.gs.GetGoals(user.uid).subscribe(goal=>{
         goal.forEach(item => {

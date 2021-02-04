@@ -1,5 +1,15 @@
 #card-display{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(4,auto);
     grid-gap:10px;
+    // background-color:#00d318;
 }
+mat-card{
+    background-color:#52aa5a;
+    
+}
+mat-card-content{
+    text-align: center;
+    color:#ffffff;
+}
+//388659,52aa53,52aa8a,3aaed8,2bdf9fe

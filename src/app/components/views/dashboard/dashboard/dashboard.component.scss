@@ -2,6 +2,7 @@
 mat-sidenav{
     // width:15vw;
     @include mat-elevation(8);
+    // position: fixed;
 }
 mat-sidenav-content{
     padding-left:2vw;
@@ -27,10 +28,4 @@ a{
 #user-button{
     position: absolute;
     right:2vw;
-}
-@media (max-width:400px){
-    mat-sidenav{
-        // width:15vw;
-        @include mat-elevation(8);
-    }
 }

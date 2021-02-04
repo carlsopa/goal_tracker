@@ -1,4 +1,5 @@
-<div id='display'>
+{{mobileQuery.matches}}
+<div id='display' [class.is-mobile]='mobileQuery.matches'>
     <div id='goal-overview'>
         <div id='daily' class='data-box'>
             <span class='data-heading'>Daily Goals</span>
