@@ -6,10 +6,23 @@
 }
 mat-card{
     background-color:#52aa5a;
+    width:6em;
+    height:6em;
     
 }
 mat-card-content{
     text-align: center;
     color:#ffffff;
+}
+.Daily{
+    background-color:#388659
+}
+.Weekly{
+    background-color:#52aa8a
+
+}
+.Monthly{
+    background-color:#3aaed8
+
 }
 //388659,52aa53,52aa8a,3aaed8,2bdf9fe

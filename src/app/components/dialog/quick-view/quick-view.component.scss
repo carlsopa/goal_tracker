@@ -1,0 +1,8 @@
+mat-dialog-actions{
+    display:grid;
+    grid-template-rows:repeat(2,auto);
+    grid-template-columns:repeat(2,auto);
+}
+#complete{
+    grid-column: 1/-1;
+}

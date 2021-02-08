@@ -1,5 +1,5 @@
 <div id='card-display'>
-<mat-card *ngFor='let goal of goalList' [routerLink]="['detail',goal.payload.doc.id]">
+<mat-card *ngFor='let goal of goalList' [routerLink]="['detail',goal.payload.doc.id]" [className]=goal.payload.doc.data().repeated>
     <mat-card-content>
         {{goal.payload.doc.data().title}}
     </mat-card-content> 

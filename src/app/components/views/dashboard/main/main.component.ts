@@ -24,6 +24,7 @@ export class MainComponent{
   DailyGoals: any=[]
   DailyGoalCount=0
   DailyCompleteCount=0
+ 
   constructor(
     public dialog: MatDialog,
     public as: AuthService,

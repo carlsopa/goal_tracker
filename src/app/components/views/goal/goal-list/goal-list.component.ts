@@ -10,6 +10,7 @@ import { GoalsService } from 'src/app/components/shared/services/goals.service';
 export class GoalListComponent implements OnInit {
   goalList = null
   uid: string
+  color = 'tstClr'
 
   constructor(private as: AuthService,
     private gs: GoalsService) { }

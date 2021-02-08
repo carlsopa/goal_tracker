@@ -11,6 +11,7 @@ import { AuthService } from 'src/app/components/shared/services/auth.service';
 export class DashboardComponent implements OnInit {
   mobileQuery: MediaQueryList
   display: string
+  isShown:boolean=false
   constructor(private as: AuthService,
     ChangeDetector: ChangeDetectorRef,
     media: MediaMatcher
@@ -19,6 +20,9 @@ export class DashboardComponent implements OnInit {
     this.as.user$.subscribe(user=>{
       this.display = user.displayName
     })
+  }
+  toggle(){
+    this.isShown = !this.isShown
   }
   LogOut(){
     this.as.LogOut()

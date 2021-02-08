@@ -8,7 +8,8 @@ const routes: Routes = [
   {path:'',component:DashboardComponent,children:[
     {path:'home',component:MainComponent},
     {path:'journal',loadChildren:()=>import('../journal/journal.module').then(m=>m.JournalModule)},
-    {path: 'goals',loadChildren:()=>import('../goal/goal.module').then(m=>m.GoalModule)}
+    {path: 'goals',loadChildren:()=>import('../goal/goal.module').then(m=>m.GoalModule)},
+    {path: 'settings',loadChildren:()=>import('../settings/settings.module').then(m=>m.SettingsModule)}
   ]}
 ];
 

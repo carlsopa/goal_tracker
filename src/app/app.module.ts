@@ -33,6 +33,9 @@ import { QuickViewComponent } from './components/dialog/quick-view/quick-view.co
 import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 import { NoteViewComponent } from './components/dialog/note-view/note-view.component';
+import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
+// import { GoalsComponent } from './components/views/settings/goals/goals.component';
+// import { JournalsComponent } from './components/views/settings/journals/journals.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +51,10 @@ import { NoteViewComponent } from './components/dialog/note-view/note-view.compo
     NewNoteComponent,
     DailyListComponent,
     QuickViewComponent,
-    NoteViewComponent
+    NoteViewComponent,
+    // MatAccordion,
+    // GoalsComponent,
+    // JournalsComponent
   ],
   imports: [
     BrowserModule,
@@ -70,6 +76,8 @@ import { NoteViewComponent } from './components/dialog/note-view/note-view.compo
     MatDialogModule,
     MatTableModule,
     MatCardModule,
+    // MatAccordion,
+    MatExpansionModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
