@@ -1,1 +1,24 @@
-<p>goals works!</p>
+<mat-table [dataSource]='GoalsData'>
+    <ng-container matColumnDef='select'>
+        <mat-header-cell *matHeaderCellDef>
+        </mat-header-cell>
+        <mat-cell *matCellDef='let element'>
+            <mat-checkbox value="{{element.select}}" (change)='add($event)'></mat-checkbox>
+        </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef='title'>
+        <mat-header-cell *matHeaderCellDef>Title</mat-header-cell>
+        <mat-cell *matCellDef='let element'>{{element.title}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef='created'>
+        <mat-header-cell *matHeaderCellDef>Created</mat-header-cell>
+        <mat-cell *matCellDef='let element'>{{element.created}}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef='displayedColumns'></mat-header-row>
+    <mat-row *matRowDef='let row; columns: displayedColumns'></mat-row>
+
+</mat-table>
+<button mat-button (click)="deletegoals()">Delete Goals</button>

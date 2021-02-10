@@ -43,6 +43,15 @@ export class GoalsService {
       updated_time: new Date().toLocaleTimeString()
     })
   }
+  DeleteGoals(lst,id){
+    lst.map(x=>{
+      this.fs.collection(`data/${id}/goals`).doc(x).delete().then(()=>{
+        console.log('you deleted records')
+      }).catch((error)=>{
+        console.log('something went wrong')
+      })
+    })
+  }
   CreateNewJournalEntry(data,id){
     data['date']=new Date().toLocaleDateString()
     data['time']=new Date().toLocaleTimeString()
