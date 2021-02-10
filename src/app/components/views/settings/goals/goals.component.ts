@@ -16,7 +16,7 @@ export class GoalsComponent implements OnInit {
   uid: string
   displayedColumns: string[]=['select','title','created']
   idList: any=[]
-  selection: SelectionModel<any>
+  // selection: SelectionModel<any>
 
   constructor(
     private as: AuthService,

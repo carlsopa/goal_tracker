@@ -67,6 +67,15 @@ export class GoalsService {
     })
 
   }
+  DeleteJournals(lst,id){
+    lst.map(x=>{
+      this.fs.collection(`data/${id}/journals`).doc(x).delete().then(()=>{
+        console.log('you deleted records')
+      }).catch((error)=>{
+        console.log('something went wrong')
+      })
+    })
+  }
   CreateNote(data,id,gid){
     data['date']=new Date().toLocaleDateString()
     data['time']=new Date().toLocaleTimeString()
